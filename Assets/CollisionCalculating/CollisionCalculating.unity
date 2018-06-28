@@ -5122,7 +5122,7 @@ GameObject:
   - component: {fileID: 1730414299}
   - component: {fileID: 1730414298}
   m_Layer: 0
-  m_Name: PX_NZ_PRISM
+  m_Name: PX_PZ_PRISM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
