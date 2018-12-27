@@ -1,0 +1,229 @@
+fileFormatVersion: 2
+guid: 43f046989d96ff147a90f80e44251418
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: barrel_T10_COLLISION
+    100002: barrel_T10_LOD0
+    100004: barrel_T10_LOD1
+    100006: barrel_T10_LOD2
+    100008: barrel_T10_LOD3
+    100010: barrel_T10_LOD4
+    100012: base_T10_LOD0
+    100014: Base_T10_LOD1
+    100016: base_T10_LOD2
+    100018: base_T10_LOD3
+    100020: base_T10_LOD4
+    100022: body_T10_COLLISION
+    100024: body_T10_LOD0
+    100026: body_T10_LOD1
+    100028: body_T10_LOD2
+    100030: body_T10_LOD3
+    100032: body_T10_LOD4
+    100034: polySurface640
+    100036: polySurface645
+    100038: polySurface682
+    100040: polySurface686
+    100042: polySurface692
+    100044: polySurface696
+    100046: polySurface702
+    100048: polySurface706
+    100050: //RootNode
+    100052: SMG_T10_BOUNDS
+    400000: barrel_T10_COLLISION
+    400002: barrel_T10_LOD0
+    400004: barrel_T10_LOD1
+    400006: barrel_T10_LOD2
+    400008: barrel_T10_LOD3
+    400010: barrel_T10_LOD4
+    400012: base_T10_LOD0
+    400014: Base_T10_LOD1
+    400016: base_T10_LOD2
+    400018: base_T10_LOD3
+    400020: base_T10_LOD4
+    400022: body_T10_COLLISION
+    400024: body_T10_LOD0
+    400026: body_T10_LOD1
+    400028: body_T10_LOD2
+    400030: body_T10_LOD3
+    400032: body_T10_LOD4
+    400034: polySurface640
+    400036: polySurface645
+    400038: polySurface682
+    400040: polySurface686
+    400042: polySurface692
+    400044: polySurface696
+    400046: polySurface702
+    400048: polySurface706
+    400050: //RootNode
+    400052: SMG_T10_BOUNDS
+    2100000: dark_grey
+    2100002: lambert2
+    2100004: white_plastic
+    2100006: weaponglow
+    2100008: lambert1
+    2300000: barrel_T10_COLLISION
+    2300002: barrel_T10_LOD0
+    2300004: barrel_T10_LOD1
+    2300006: barrel_T10_LOD2
+    2300008: barrel_T10_LOD3
+    2300010: barrel_T10_LOD4
+    2300012: base_T10_LOD0
+    2300014: Base_T10_LOD1
+    2300016: base_T10_LOD2
+    2300018: base_T10_LOD3
+    2300020: base_T10_LOD4
+    2300022: body_T10_COLLISION
+    2300024: body_T10_LOD0
+    2300026: body_T10_LOD1
+    2300028: body_T10_LOD2
+    2300030: body_T10_LOD3
+    2300032: body_T10_LOD4
+    2300034: polySurface640
+    2300036: polySurface645
+    2300038: polySurface682
+    2300040: polySurface686
+    2300042: polySurface692
+    2300044: polySurface696
+    2300046: polySurface702
+    2300048: polySurface706
+    2300050: SMG_T10_BOUNDS
+    3300000: barrel_T10_COLLISION
+    3300002: barrel_T10_LOD0
+    3300004: barrel_T10_LOD1
+    3300006: barrel_T10_LOD2
+    3300008: barrel_T10_LOD3
+    3300010: barrel_T10_LOD4
+    3300012: base_T10_LOD0
+    3300014: Base_T10_LOD1
+    3300016: base_T10_LOD2
+    3300018: base_T10_LOD3
+    3300020: base_T10_LOD4
+    3300022: body_T10_COLLISION
+    3300024: body_T10_LOD0
+    3300026: body_T10_LOD1
+    3300028: body_T10_LOD2
+    3300030: body_T10_LOD3
+    3300032: body_T10_LOD4
+    3300034: polySurface640
+    3300036: polySurface645
+    3300038: polySurface682
+    3300040: polySurface686
+    3300042: polySurface692
+    3300044: polySurface696
+    3300046: polySurface702
+    3300048: polySurface706
+    3300050: SMG_T10_BOUNDS
+    4300000: base_T10_LOD0
+    4300002: polySurface640
+    4300004: polySurface645
+    4300006: Base_T10_LOD1
+    4300008: polySurface682
+    4300010: polySurface686
+    4300012: base_T10_LOD2
+    4300014: polySurface692
+    4300016: polySurface696
+    4300018: base_T10_LOD3
+    4300020: polySurface702
+    4300022: polySurface706
+    4300024: base_T10_LOD4
+    4300026: barrel_T10_LOD0
+    4300028: body_T10_LOD0
+    4300030: barrel_T10_LOD1
+    4300032: body_T10_LOD1
+    4300034: barrel_T10_LOD2
+    4300036: body_T10_LOD2
+    4300038: barrel_T10_LOD3
+    4300040: body_T10_LOD3
+    4300042: barrel_T10_LOD4
+    4300044: body_T10_LOD4
+    4300046: barrel_T10_COLLISION
+    4300048: body_T10_COLLISION
+    4300050: SMG_T10_BOUNDS
+    20500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.0625
+    - 0.03125
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
