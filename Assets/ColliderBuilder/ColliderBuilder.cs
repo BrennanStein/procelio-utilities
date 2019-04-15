@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BotData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,12 +15,14 @@ public class ColliderBuilder : MonoBehaviour
     GameObject ghost;
     public Material whitetrans;
     public Material bluetrans;
+    public Material buildtrans;
 
     public GameObject cameraObj;
     public float distance;
 
     void Start()
     {
+        LoadShapesFromGameObjects();
         Cursor.lockState = CursorLockMode.Locked;
         ResetGhost();
         cameraObj = Camera.main.gameObject;
@@ -31,8 +34,18 @@ public class ColliderBuilder : MonoBehaviour
         ghost = Instantiate(GameObject.Find("" + partType));
         ghost.transform.SetParent(null);
         ghost.SetActive(true);
-        ghost.GetComponent<MeshRenderer>().material = bluetrans;
+        ghost.GetComponent<MeshRenderer>().material = buildonly ? buildtrans : bluetrans;
+        if (buildonly)
+        {
+            partType = (ColPriv) ((int)partType | (int)ColPrivAlterations.IGNORE_IN_BUILD_MODE);
+        } else
+        {
+            partType = (ColPriv)((int)partType & ~(int)ColPrivAlterations.IGNORE_IN_BUILD_MODE);
+        }
     }
+
+    bool buildonly = false;
+
     void Update()
     {
         distance += Input.GetAxis("Mouse ScrollWheel");
@@ -62,7 +75,11 @@ public class ColliderBuilder : MonoBehaviour
             position.y++;
         if (Input.GetKeyDown(KeyCode.Comma))
             position.y--;
-
+        if (Input.GetKeyDown(KeyCode.Quote))
+        {
+            buildonly = !buildonly;
+            ResetGhost();
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1)) { partType = ColPriv.CUBE; ResetGhost(); }          // 1: CUBE
         if (Input.GetKeyDown(KeyCode.Alpha2)) { partType = ColPriv.PX_NY_PRISM; ResetGhost(); }   // 2: PRISM
         if (Input.GetKeyDown(KeyCode.Alpha3)) { partType = ColPriv.PX_PZ_NY_TETRA; ResetGhost(); }// 3: TETRA
@@ -119,8 +136,8 @@ public class ColliderBuilder : MonoBehaviour
                 if (go.name.IndexOf("(Clone)") < 0) continue;
                 string name = go.name.Substring(0, go.name.IndexOf("(Clone)"));
                 ColPriv type = (ColPriv)Enum.Parse(typeof(ColPriv), name, true);
-                var posKey = new Vector3Int((int)(go.transform.position.x + .5f),
-                    (int)(0.5f + go.transform.position.y), (int)(.5f + go.transform.position.z));
+                var posKey = new Vector3Int((int)(go.transform.position.x ),
+                    (int)( go.transform.position.y), (int)( go.transform.position.z));
                 foreach (var t in shapes)
                     continue;
                 shapes.Add(new KeyValuePair<Vector3Int, ColPriv>(posKey, type));
@@ -128,22 +145,33 @@ public class ColliderBuilder : MonoBehaviour
         Debug.LogError("SaveSuccess");
     }
 
+    string convertColPriv(ColPriv cp)
+    {
+        if (cp >= ColPriv.CUBE && cp <= ColPriv.COUNT)
+            return "ColPriv." + cp;
+
+        else return ""+(int)cp;
+
+    }
     void Output()
     {
+        
         using (System.IO.StreamWriter file =
           new System.IO.StreamWriter(Application.persistentDataPath + "/colliderdata.txt"))
         {
-            file.Write("KeyValuePair<ColPriv, int>[] array = {");
+            string toOut = "";
+            toOut += ("KeyValuePair<ColPriv, int>[] array = {");
             for (int i = 0; i < shapes.Count; ++i)
             {
-                if (i != 0) file.Write(", "); // Suck it, traditional fencepost structure
-                file.Write("new KeyValuePair<ColPriv, int>(ColPriv." + shapes[i].Value + ", " + BotData.BlockData.AssemblePos(shapes[i].Key.x, shapes[i].Key.y, shapes[i].Key.z) + ")");
+                if (i != 0) { toOut += ", "; } // Suck it, traditional fencepost structure
+                
+                toOut += ("new KeyValuePair<ColPriv, int>("+ convertColPriv(shapes[i].Value) + ", " + BotData.BlockData.AssemblePos(shapes[i].Key.x, shapes[i].Key.y, shapes[i].Key.z) + ")");
 
             }
-            file.Write("};");
-            List<ColPriv> lcp = new List<ColPriv>();
-            ColPriv[] dta = { ColPriv.CUBE, ColPriv.NX_NUB };
-            lcp.AddRange(dta);
+            //   var v =  (ColPriv)((int)shapes[i].Value + (int)ColPrivAlterations.IGNORE_IN_BUILD_MODE)
+            toOut += "};";
+            file.WriteLine(toOut);
+            Debug.Log(toOut);
         }
     }
 }

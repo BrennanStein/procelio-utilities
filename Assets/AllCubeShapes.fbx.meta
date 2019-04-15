@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 68ca5ee1edcc54249acb1960930cf944
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     100002: Cube
@@ -90,6 +90,30 @@ ModelImporter:
     100168: Cube.082
     100170: Lamp
     100172: NX_NZ
+    100174: Camera
+    100176: Cube.083
+    100178: Cube.084
+    100180: Cube.085
+    100182: Cube.086
+    100184: Cube.087
+    100186: Cube.088
+    100188: Cube.089
+    100190: Cube.090
+    100192: Cube.091
+    100194: Cube.092
+    100196: Cube.093
+    100198: Cube.094
+    100200: Cube.095
+    100202: Cube.096
+    100204: Cube.097
+    100206: Cube.098
+    100208: Cube.099
+    100210: Cube.100
+    100212: Cube.101
+    100214: Cube.102
+    100216: Cube.103
+    100218: NX_NZ.001
+    100220: NX_NZ.002
     400000: //RootNode
     400002: Cube
     400004: Cube.000
@@ -177,6 +201,31 @@ ModelImporter:
     400168: Cube.082
     400170: Lamp
     400172: NX_NZ
+    400174: Camera
+    400176: Cube.083
+    400178: Cube.084
+    400180: Cube.085
+    400182: Cube.086
+    400184: Cube.087
+    400186: Cube.088
+    400188: Cube.089
+    400190: Cube.090
+    400192: Cube.091
+    400194: Cube.092
+    400196: Cube.093
+    400198: Cube.094
+    400200: Cube.095
+    400202: Cube.096
+    400204: Cube.097
+    400206: Cube.098
+    400208: Cube.099
+    400210: Cube.100
+    400212: Cube.101
+    400214: Cube.102
+    400216: Cube.103
+    400218: NX_NZ.001
+    400220: NX_NZ.002
+    2000000: Camera
     2100000: No Name
     2100002: Material.003
     2100004: Material.004
@@ -203,6 +252,30 @@ ModelImporter:
     2100046: Material.027
     2100048: Material.028
     2100050: Material.030
+    2100052: Material.021
+    2100054: Material.016
+    2100056: Material.014
+    2100058: Material.002
+    2100060: Material.033
+    2100062: Material.032
+    2100064: Material.031
+    2100066: Material.029
+    2100068: Material.037
+    2100070: Material.036
+    2100072: Material.035
+    2100074: Material.034
+    2100076: Material.041
+    2100078: Material.040
+    2100080: Material.039
+    2100082: Material.038
+    2100084: Material.045
+    2100086: Material.044
+    2100088: Material.043
+    2100090: Material.042
+    2100092: Material.049
+    2100094: Material.048
+    2100096: Material.047
+    2100098: Material.046
     2300000: Cube
     2300002: Cube.000
     2300004: Cube.001
@@ -288,6 +361,29 @@ ModelImporter:
     2300164: Cube.081
     2300166: Cube.082
     2300168: NX_NZ
+    2300170: Cube.083
+    2300172: Cube.084
+    2300174: Cube.085
+    2300176: Cube.086
+    2300178: Cube.087
+    2300180: Cube.088
+    2300182: Cube.089
+    2300184: Cube.090
+    2300186: Cube.091
+    2300188: Cube.092
+    2300190: Cube.093
+    2300192: Cube.094
+    2300194: Cube.095
+    2300196: Cube.096
+    2300198: Cube.097
+    2300200: Cube.098
+    2300202: Cube.099
+    2300204: Cube.100
+    2300206: Cube.101
+    2300208: Cube.102
+    2300210: Cube.103
+    2300212: NX_NZ.001
+    2300214: NX_NZ.002
     3300000: Cube
     3300002: Cube.000
     3300004: Cube.001
@@ -373,6 +469,29 @@ ModelImporter:
     3300164: Cube.081
     3300166: Cube.082
     3300168: NX_NZ
+    3300170: Cube.083
+    3300172: Cube.084
+    3300174: Cube.085
+    3300176: Cube.086
+    3300178: Cube.087
+    3300180: Cube.088
+    3300182: Cube.089
+    3300184: Cube.090
+    3300186: Cube.091
+    3300188: Cube.092
+    3300190: Cube.093
+    3300192: Cube.094
+    3300194: Cube.095
+    3300196: Cube.096
+    3300198: Cube.097
+    3300200: Cube.098
+    3300202: Cube.099
+    3300204: Cube.100
+    3300206: Cube.101
+    3300208: Cube.102
+    3300210: Cube.103
+    3300212: NX_NZ.001
+    3300214: NX_NZ.002
     4300000: Cube.071
     4300002: Cube
     4300004: Cube.029
@@ -458,6 +577,29 @@ ModelImporter:
     4300164: Cube.081
     4300166: Cube.082
     4300168: NX_NZ
+    4300170: Cube.085
+    4300172: Cube.084
+    4300174: Cube.083
+    4300176: Cube.089
+    4300178: Cube.088
+    4300180: Cube.087
+    4300182: Cube.086
+    4300184: Cube.093
+    4300186: Cube.092
+    4300188: Cube.091
+    4300190: Cube.090
+    4300192: Cube.097
+    4300194: Cube.096
+    4300196: Cube.095
+    4300198: Cube.094
+    4300200: Cube.100
+    4300202: Cube.099
+    4300204: Cube.098
+    4300206: NX_NZ.001
+    4300208: Cube.103
+    4300210: Cube.102
+    4300212: Cube.101
+    4300214: NX_NZ.002
     10800000: Lamp
   externalObjects: {}
   materials:
@@ -493,6 +635,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -510,11 +653,16 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -529,7 +677,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

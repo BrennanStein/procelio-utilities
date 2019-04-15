@@ -288,7 +288,7 @@ public class CollideData
             case ColPriv.NZ_NY_PRISM:
                 return RotateNZ_NY_PRISM(xRot, yRot, zRot);
             case ColPriv.NX_NY_PRISM:
-                return RotateNZ_NY_PRISM(xRot, yRot, zRot);
+                return RotateNX_NY_PRISM(xRot, yRot, zRot);
             case ColPriv.PZ_NY_PRISM:
                 return RotatePZ_NY_PRISM(xRot, yRot, zRot);
             case ColPriv.PX_NZ_PRISM:
@@ -456,24 +456,6 @@ public class CollideData
 
     private static ColPriv RotateCUBE(int x, int y, int z)
     {
-        switch (z)
-        {
-            case 1: return RotateCUBE(x, y, 0);
-            case 2: return RotateCUBE(x, y, 0);
-            case 3: return RotateCUBE(x, y, 0);
-        }
-        switch (x)
-        {
-            case 1: return RotateCUBE(0, y, 0);
-            case 2: return RotateCUBE(0, y, 0);
-            case 3: return RotateCUBE(0, y, 0);
-        }
-        switch (y)
-        {
-            case 1: return ColPriv.CUBE;
-            case 2: return ColPriv.CUBE;
-            case 3: return ColPriv.CUBE;
-        }
         return ColPriv.CUBE;
     }
     private static ColPriv RotatePX_NY_PRISM(int x, int y, int z)
@@ -920,21 +902,21 @@ public class CollideData
     {
         switch (z)
         {
-            case 1: return RotateCUBE(x, y, 0);
-            case 2: return RotateCUBE(x, y, 0);
-            case 3: return RotateCUBE(x, y, 0);
+            case 1: return RotateNX_PZ_PY_INNER(x, y, 0);
+            case 2: return RotateNX_PZ_NY_INNER(x, y, 0);
+            case 3: return RotatePX_PZ_NY_INNER(x, y, 0);
         }
         switch (x)
         {
-            case 1: return RotateCUBE(0, y, 0);
-            case 2: return RotateCUBE(0, y, 0);
-            case 3: return RotateCUBE(0, y, 0);
+            case 1: return RotatePX_PZ_NY_INNER(0, y, 0);
+            case 2: return RotatePX_NZ_NY_INNER(0, y, 0);
+            case 3: return RotatePX_NZ_PY_INNER(0, y, 0);
         }
         switch (y)
         {
-            case 1: return ColPriv.CUBE;
-            case 2: return ColPriv.CUBE;
-            case 3: return ColPriv.CUBE;
+            case 1: return ColPriv.PX_NZ_PY_INNER;
+            case 2: return ColPriv.NX_NZ_PY_INNER;
+            case 3: return ColPriv.NX_PZ_PY_INNER;
         }
         return ColPriv.PX_PY_PZ_INNER;
     }
@@ -942,21 +924,21 @@ public class CollideData
     {
         switch (z)
         {
-            case 1: return RotateCUBE(x, y, 0);
-            case 2: return RotateCUBE(x, y, 0);
-            case 3: return RotateCUBE(x, y, 0);
+            case 1: return RotateNX_PZ_NY_INNER(x, y, 0);
+            case 2: return RotatePX_PZ_NY_INNER(x, y, 0);
+            case 3: return RotatePX_PY_PZ_INNER(x, y, 0);
         }
         switch (x)
         {
-            case 1: return RotateCUBE(0, y, 0);
-            case 2: return RotateCUBE(0, y, 0);
-            case 3: return RotateCUBE(0, y, 0);
+            case 1: return RotateNX_PZ_NY_INNER(0, y, 0);
+            case 2: return RotateNX_NZ_NY_INNER(0, y, 0);
+            case 3: return RotateNX_NZ_PY_INNER(0, y, 0);
         }
         switch (y)
         {
-            case 1: return ColPriv.CUBE;
-            case 2: return ColPriv.CUBE;
-            case 3: return ColPriv.CUBE;
+            case 1: return ColPriv.PX_PY_PZ_INNER;
+            case 2: return ColPriv.PX_NZ_PY_INNER;
+            case 3: return ColPriv.NX_NZ_PY_INNER;
         }
         return ColPriv.NX_PZ_PY_INNER;
     }
@@ -964,21 +946,21 @@ public class CollideData
     {
         switch (z)
         {
-            case 1: return RotateCUBE(x, y, 0);
-            case 2: return RotateCUBE(x, y, 0);
-            case 3: return RotateCUBE(x, y, 0);
+            case 1: return RotateNX_NZ_NY_INNER(x, y, 0);
+            case 2: return RotatePX_NZ_NY_INNER(x, y, 0);
+            case 3: return RotatePX_NZ_PY_INNER(x, y, 0);
         }
         switch (x)
         {
-            case 1: return RotateCUBE(0, y, 0);
-            case 2: return RotateCUBE(0, y, 0);
-            case 3: return RotateCUBE(0, y, 0);
+            case 1: return RotateNX_PZ_PY_INNER(0, y, 0);
+            case 2: return RotateNX_PZ_NY_INNER(0, y, 0);
+            case 3: return RotateNX_NZ_NY_INNER(0, y, 0);
         }
         switch (y)
         {
-            case 1: return ColPriv.CUBE;
-            case 2: return ColPriv.CUBE;
-            case 3: return ColPriv.CUBE;
+            case 1: return ColPriv.NX_PZ_PY_INNER;
+            case 2: return ColPriv.PX_PY_PZ_INNER;
+            case 3: return ColPriv.PX_NZ_PY_INNER;
         }
         return ColPriv.NX_NZ_PY_INNER;
     }
@@ -986,21 +968,21 @@ public class CollideData
     {
         switch (z)
         {
-            case 1: return RotateCUBE(x, y, 0);
-            case 2: return RotateCUBE(x, y, 0);
-            case 3: return RotateCUBE(x, y, 0);
+            case 1: return RotateNX_NZ_PY_INNER(x, y, 0);
+            case 2: return RotateNX_NZ_NY_INNER(x, y, 0);
+            case 3: return RotatePX_PY_PZ_INNER(x, y, 0);
         }
         switch (x)
         {
-            case 1: return RotateCUBE(0, y, 0);
-            case 2: return RotateCUBE(0, y, 0);
-            case 3: return RotateCUBE(0, y, 0);
+            case 1: return RotatePX_PY_PZ_INNER(0, y, 0);
+            case 2: return RotatePX_PZ_NY_INNER(0, y, 0);
+            case 3: return RotatePX_NZ_NY_INNER(0, y, 0);
         }
         switch (y)
         {
-            case 1: return ColPriv.CUBE;
-            case 2: return ColPriv.CUBE;
-            case 3: return ColPriv.CUBE;
+            case 1: return ColPriv.NX_NZ_PY_INNER;
+            case 2: return ColPriv.NX_PZ_PY_INNER;
+            case 3: return ColPriv.PX_PY_PZ_INNER;
         }
         return ColPriv.PX_NZ_PY_INNER;
     }
@@ -1008,21 +990,21 @@ public class CollideData
     {
         switch (z)
         {
-            case 1: return RotateCUBE(x, y, 0);
-            case 2: return RotateCUBE(x, y, 0);
-            case 3: return RotateCUBE(x, y, 0);
+            case 1: return RotatePX_PY_PZ_INNER(x, y, 0);
+            case 2: return RotateNX_PZ_PY_INNER(x, y, 0);
+            case 3: return RotateNX_PZ_NY_INNER(x, y, 0);
         }
         switch (x)
         {
-            case 1: return RotateCUBE(0, y, 0);
-            case 2: return RotateCUBE(0, y, 0);
-            case 3: return RotateCUBE(0, y, 0);
+            case 1: return RotatePX_NZ_NY_INNER(0, y, 0);
+            case 2: return RotatePX_NZ_PY_INNER(0, y, 0);
+            case 3: return RotatePX_PY_PZ_INNER(0, y, 0);
         }
         switch (y)
         {
-            case 1: return ColPriv.CUBE;
-            case 2: return ColPriv.CUBE;
-            case 3: return ColPriv.CUBE;
+            case 1: return ColPriv.PX_NZ_NY_INNER;
+            case 2: return ColPriv.NX_NZ_NY_INNER;
+            case 3: return ColPriv.NX_PZ_NY_INNER;
         }
         return ColPriv.PX_PZ_NY_INNER;
     }
@@ -1030,21 +1012,21 @@ public class CollideData
     {
         switch (z)
         {
-            case 1: return RotateCUBE(x, y, 0);
-            case 2: return RotateCUBE(x, y, 0);
-            case 3: return RotateCUBE(x, y, 0);
+            case 1: return RotatePX_PZ_NY_INNER(x, y, 0);
+            case 2: return RotatePX_PY_PZ_INNER(x, y, 0);
+            case 3: return RotateNX_PZ_PY_INNER(x, y, 0);
         }
         switch (x)
         {
-            case 1: return RotateCUBE(0, y, 0);
-            case 2: return RotateCUBE(0, y, 0);
-            case 3: return RotateCUBE(0, y, 0);
+            case 1: return RotateNX_NZ_NY_INNER(0, y, 0);
+            case 2: return RotateNX_NZ_PY_INNER(0, y, 0);
+            case 3: return RotateNX_PZ_PY_INNER(0, y, 0);
         }
         switch (y)
         {
-            case 1: return ColPriv.CUBE;
-            case 2: return ColPriv.CUBE;
-            case 3: return ColPriv.CUBE;
+            case 1: return ColPriv.PX_PZ_NY_INNER;
+            case 2: return ColPriv.PX_NZ_NY_INNER;
+            case 3: return ColPriv.NX_NZ_NY_INNER;
         }
         return ColPriv.NX_PZ_NY_INNER;
     }
@@ -1052,21 +1034,21 @@ public class CollideData
     {
         switch (z)
         {
-            case 1: return RotateCUBE(x, y, 0);
-            case 2: return RotateCUBE(x, y, 0);
-            case 3: return RotateCUBE(x, y, 0);
+            case 1: return RotatePX_NZ_NY_INNER(x, y, 0);
+            case 2: return RotatePX_NZ_PY_INNER(x, y, 0);
+            case 3: return RotateNX_NZ_PY_INNER(x, y, 0);
         }
         switch (x)
         {
-            case 1: return RotateCUBE(0, y, 0);
-            case 2: return RotateCUBE(0, y, 0);
-            case 3: return RotateCUBE(0, y, 0);
+            case 1: return RotateNX_NZ_PY_INNER(0, y, 0);
+            case 2: return RotateNX_PZ_PY_INNER(0, y, 0);
+            case 3: return RotateNX_PZ_NY_INNER(0, y, 0);
         }
         switch (y)
         {
-            case 1: return ColPriv.CUBE;
-            case 2: return ColPriv.CUBE;
-            case 3: return ColPriv.CUBE;
+            case 1: return ColPriv.NX_PZ_NY_INNER;
+            case 2: return ColPriv.PX_PZ_NY_INNER;
+            case 3: return ColPriv.PX_NZ_NY_INNER;
         }
         return ColPriv.NX_NZ_NY_INNER;
     }
@@ -1074,21 +1056,21 @@ public class CollideData
     {
         switch (z)
         {
-            case 1: return RotateCUBE(x, y, 0);
-            case 2: return RotateCUBE(x, y, 0);
-            case 3: return RotateCUBE(x, y, 0);
+            case 1: return RotatePX_NZ_PY_INNER(x, y, 0);
+            case 2: return RotateNX_NZ_PY_INNER(x, y, 0);
+            case 3: return RotateNX_NZ_NY_INNER(x, y, 0);
         }
         switch (x)
         {
-            case 1: return RotateCUBE(0, y, 0);
-            case 2: return RotateCUBE(0, y, 0);
-            case 3: return RotateCUBE(0, y, 0);
+            case 1: return RotatePX_NZ_PY_INNER(0, y, 0);
+            case 2: return RotatePX_PY_PZ_INNER(0, y, 0);
+            case 3: return RotatePX_PZ_NY_INNER(0, y, 0);
         }
         switch (y)
         {
-            case 1: return ColPriv.CUBE;
-            case 2: return ColPriv.CUBE;
-            case 3: return ColPriv.CUBE;
+            case 1: return ColPriv.NX_NZ_NY_INNER;
+            case 2: return ColPriv.NX_PZ_NY_INNER;
+            case 3: return ColPriv.PX_PZ_NY_INNER;
         }
         return ColPriv.PX_NZ_NY_INNER;
     }
