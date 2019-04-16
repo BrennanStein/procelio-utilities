@@ -88,6 +88,30 @@ public enum ColPriv
     X_RIDGE_NZ,
     Y_RIDGE_PZ,
     X_RIDGE_PZ,
+    PX_PZ_FACENY_SLOPESIDE,
+    NX_PZ_FACENY_SLOPESIDE,
+    NX_NZ_FACENY_SLOPESIDE,
+    PX_NZ_FACENY_SLOPESIDE,
+    PX_NZ_FACEPY_SLOPESIDE,
+    NX_NZ_FACEPY_SLOPESIDE,
+    NX_PZ_FACEPY_SLOPESIDE,
+    PX_PZ_FACEPY_SLOPESIDE,
+    PY_PZ_FACEPX_SLOPESIDE,
+    PY_NZ_FACEPX_SLOPESIDE,
+    NY_PZ_FACEPX_SLOPESIDE,
+    NY_NZ_FACEPX_SLOPESIDE,
+    NY_NZ_FACENX_SLOPESIDE,
+    NY_PZ_FACENX_SLOPESIDE,
+    PY_NZ_FACENX_SLOPESIDE,
+    PY_PZ_FACENX_SLOPESIDE,
+    NX_PY_FACENZ_SLOPESIDE,
+    PX_PY_FACENZ_SLOPESIDE,
+    NX_NY_FACENZ_SLOPESIDE,
+    NX_NY_FACEPZ_SLOPESIDE,
+    PX_PY_FACEPZ_SLOPESIDE,
+    NX_PY_FACEPZ_SLOPESIDE,
+    PX_NY_FACENZ_SLOPESIDE,
+    PX_NY_FACEPZ_SLOPESIDE,
     COUNT
 }
 public class CollideData
@@ -449,6 +473,30 @@ public class CollideData
                 return RotateY_RIDGE_PZ(xRot, yRot, zRot);
             case ColPriv.X_RIDGE_PZ:
                 return RotateX_RIDGE_PZ(xRot, yRot, zRot);
+            case ColPriv.PX_PZ_FACENY_SLOPESIDE: return RotatePX_PZ_FACENY_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NX_PZ_FACENY_SLOPESIDE: return RotateNX_PZ_FACENY_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NX_NZ_FACENY_SLOPESIDE: return RotateNX_NZ_FACENY_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.PX_NZ_FACENY_SLOPESIDE: return RotatePX_NZ_FACENY_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.PX_NZ_FACEPY_SLOPESIDE: return RotatePX_NZ_FACEPY_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NX_NZ_FACEPY_SLOPESIDE: return RotateNX_NZ_FACEPY_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NX_PZ_FACEPY_SLOPESIDE: return RotateNX_PZ_FACEPY_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.PX_PZ_FACEPY_SLOPESIDE: return RotatePX_PZ_FACEPY_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.PY_PZ_FACEPX_SLOPESIDE: return RotatePY_PZ_FACEPX_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.PY_NZ_FACEPX_SLOPESIDE: return RotatePY_NZ_FACEPX_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NY_PZ_FACEPX_SLOPESIDE: return RotateNY_PZ_FACEPX_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NY_NZ_FACEPX_SLOPESIDE: return RotateNY_NZ_FACEPX_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NY_NZ_FACENX_SLOPESIDE: return RotateNY_NZ_FACENX_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NY_PZ_FACENX_SLOPESIDE: return RotateNY_PZ_FACENX_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.PY_NZ_FACENX_SLOPESIDE: return RotatePY_NZ_FACENX_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.PY_PZ_FACENX_SLOPESIDE: return RotatePY_PZ_FACENX_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NX_PY_FACENZ_SLOPESIDE: return RotateNX_PY_FACENZ_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.PX_PY_FACENZ_SLOPESIDE: return RotatePX_PY_FACENZ_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NX_NY_FACENZ_SLOPESIDE: return RotateNX_NY_FACENZ_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NX_NY_FACEPZ_SLOPESIDE: return RotateNX_NY_FACEPZ_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.PX_PY_FACEPZ_SLOPESIDE: return RotatePX_PY_FACEPZ_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.NX_PY_FACEPZ_SLOPESIDE: return RotateNX_PY_FACEPZ_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.PX_NY_FACENZ_SLOPESIDE: return RotatePX_NY_FACENZ_SLOPESIDE(xRot, yRot, zRot);
+            case ColPriv.PX_NY_FACEPZ_SLOPESIDE: return RotatePX_NY_FACEPZ_SLOPESIDE(xRot, yRot, zRot);
         }
         return c;
     }
@@ -2284,5 +2332,532 @@ public class CollideData
         }
         return ColPriv.X_RIDGE_PZ;
     }
-
+    private static ColPriv RotatePX_PZ_FACENY_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePY_PZ_FACEPX_SLOPESIDE(x, y, 0);
+            case 2: return RotateNX_PZ_FACEPY_SLOPESIDE(x, y, 0);
+            case 3: return RotateNY_PZ_FACENX_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePX_NY_FACENZ_SLOPESIDE(0, y, 0);
+            case 2: return RotatePX_NZ_FACEPY_SLOPESIDE(0, y, 0);
+            case 3: return RotatePX_PY_FACEPZ_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PX_NZ_FACENY_SLOPESIDE;
+            case 2: return ColPriv.NX_NZ_FACENY_SLOPESIDE;
+            case 3: return ColPriv.NX_PZ_FACENY_SLOPESIDE;
+        }
+        return ColPriv.PX_PZ_FACENY_SLOPESIDE;
+    }
+    private static ColPriv RotateNX_PZ_FACENY_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNY_PZ_FACEPX_SLOPESIDE(x, y, 0);
+            case 2: return RotatePX_PZ_FACEPY_SLOPESIDE(x, y, 0);
+            case 3: return RotatePY_PZ_FACENX_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNX_NY_FACENZ_SLOPESIDE(0, y, 0);
+            case 2: return RotateNX_NZ_FACEPY_SLOPESIDE(0, y, 0);
+            case 3: return RotateNX_PY_FACEPZ_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PX_PZ_FACENY_SLOPESIDE;
+            case 2: return ColPriv.PX_NZ_FACENY_SLOPESIDE;
+            case 3: return ColPriv.NX_NZ_FACENY_SLOPESIDE;
+        }
+        return ColPriv.NX_PZ_FACENY_SLOPESIDE;
+    }
+    private static ColPriv RotateNX_NZ_FACENY_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNY_NZ_FACEPX_SLOPESIDE(x, y, 0);
+            case 2: return RotatePX_NZ_FACEPY_SLOPESIDE(x, y, 0);
+            case 3: return RotatePY_NZ_FACENX_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNX_PY_FACENZ_SLOPESIDE(0, y, 0);
+            case 2: return RotateNX_PZ_FACEPY_SLOPESIDE(0, y, 0);
+            case 3: return RotateNX_NY_FACEPZ_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NX_PZ_FACENY_SLOPESIDE;
+            case 2: return ColPriv.PX_PZ_FACENY_SLOPESIDE;
+            case 3: return ColPriv.PX_NZ_FACENY_SLOPESIDE;
+        }
+        return ColPriv.NX_NZ_FACENY_SLOPESIDE;
+    }
+    private static ColPriv RotatePX_NZ_FACENY_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePY_NZ_FACEPX_SLOPESIDE(x, y, 0);
+            case 2: return RotateNX_NZ_FACEPY_SLOPESIDE(x, y, 0);
+            case 3: return RotateNY_NZ_FACENX_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePX_PY_FACENZ_SLOPESIDE(0, y, 0);
+            case 2: return RotatePX_PZ_FACEPY_SLOPESIDE(0, y, 0);
+            case 3: return RotatePX_NY_FACEPZ_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NX_NZ_FACENY_SLOPESIDE;
+            case 2: return ColPriv.NX_PZ_FACENY_SLOPESIDE;
+            case 3: return ColPriv.PX_PZ_FACENY_SLOPESIDE;
+        }
+        return ColPriv.PX_NZ_FACENY_SLOPESIDE;
+    }
+    private static ColPriv RotatePX_NZ_FACEPY_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePY_NZ_FACENX_SLOPESIDE(x, y, 0);
+            case 2: return RotateNX_NZ_FACENY_SLOPESIDE(x, y, 0);
+            case 3: return RotateNY_NZ_FACEPX_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePX_PY_FACEPZ_SLOPESIDE(0, y, 0);
+            case 2: return RotatePX_PZ_FACENY_SLOPESIDE(0, y, 0);
+            case 3: return RotatePX_NY_FACENZ_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NX_NZ_FACEPY_SLOPESIDE;
+            case 2: return ColPriv.NX_PZ_FACEPY_SLOPESIDE;
+            case 3: return ColPriv.PX_PZ_FACEPY_SLOPESIDE;
+        }
+        return ColPriv.PX_NZ_FACEPY_SLOPESIDE;
+    }
+    private static ColPriv RotateNX_NZ_FACEPY_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNY_NZ_FACENX_SLOPESIDE(x, y, 0);
+            case 2: return RotatePX_NZ_FACENY_SLOPESIDE(x, y, 0);
+            case 3: return RotatePY_NZ_FACEPX_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNX_PY_FACEPZ_SLOPESIDE(0, y, 0);
+            case 2: return RotateNX_PZ_FACENY_SLOPESIDE(0, y, 0);
+            case 3: return RotateNX_NY_FACENZ_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NX_PZ_FACEPY_SLOPESIDE;
+            case 2: return ColPriv.PX_PZ_FACEPY_SLOPESIDE;
+            case 3: return ColPriv.PX_NZ_FACEPY_SLOPESIDE;
+        }
+        return ColPriv.NX_NZ_FACEPY_SLOPESIDE;
+    }
+    private static ColPriv RotateNX_PZ_FACEPY_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNY_PZ_FACENX_SLOPESIDE(x, y, 0);
+            case 2: return RotatePX_PZ_FACENY_SLOPESIDE(x, y, 0);
+            case 3: return RotatePY_PZ_FACEPX_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNX_NY_FACEPZ_SLOPESIDE(0, y, 0);
+            case 2: return RotateNX_NZ_FACENY_SLOPESIDE(0, y, 0);
+            case 3: return RotateNX_PY_FACENZ_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PX_PZ_FACEPY_SLOPESIDE;
+            case 2: return ColPriv.PX_NZ_FACEPY_SLOPESIDE;
+            case 3: return ColPriv.NX_NZ_FACEPY_SLOPESIDE;
+        }
+        return ColPriv.NX_PZ_FACEPY_SLOPESIDE;
+    }
+    private static ColPriv RotatePX_PZ_FACEPY_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePY_PZ_FACENX_SLOPESIDE(x, y, 0);
+            case 2: return RotateNX_PZ_FACENY_SLOPESIDE(x, y, 0);
+            case 3: return RotateNY_PZ_FACEPX_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePX_NY_FACEPZ_SLOPESIDE(0, y, 0);
+            case 2: return RotatePX_NZ_FACENY_SLOPESIDE(0, y, 0);
+            case 3: return RotatePX_PY_FACENZ_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PX_NZ_FACEPY_SLOPESIDE;
+            case 2: return ColPriv.NX_NZ_FACEPY_SLOPESIDE;
+            case 3: return ColPriv.NX_PZ_FACEPY_SLOPESIDE;
+        }
+        return ColPriv.PX_PZ_FACEPY_SLOPESIDE;
+    }
+    private static ColPriv RotatePY_PZ_FACEPX_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNX_PZ_FACEPY_SLOPESIDE(x, y, 0);
+            case 2: return RotateNY_PZ_FACENX_SLOPESIDE(x, y, 0);
+            case 3: return RotatePX_PZ_FACENY_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNY_PZ_FACEPX_SLOPESIDE(0, y, 0);
+            case 2: return RotateNY_NZ_FACEPX_SLOPESIDE(0, y, 0);
+            case 3: return RotatePY_NZ_FACEPX_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PX_PY_FACENZ_SLOPESIDE;
+            case 2: return ColPriv.PY_NZ_FACENX_SLOPESIDE;
+            case 3: return ColPriv.NX_PY_FACEPZ_SLOPESIDE;
+        }
+        return ColPriv.PY_PZ_FACEPX_SLOPESIDE;
+    }
+    private static ColPriv RotatePY_NZ_FACEPX_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNX_NZ_FACEPY_SLOPESIDE(x, y, 0);
+            case 2: return RotateNY_NZ_FACENX_SLOPESIDE(x, y, 0);
+            case 3: return RotatePX_NZ_FACENY_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePY_PZ_FACEPX_SLOPESIDE(0, y, 0);
+            case 2: return RotateNY_PZ_FACEPX_SLOPESIDE(0, y, 0);
+            case 3: return RotateNY_NZ_FACEPX_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NX_PY_FACENZ_SLOPESIDE;
+            case 2: return ColPriv.PY_PZ_FACENX_SLOPESIDE;
+            case 3: return ColPriv.PX_PY_FACEPZ_SLOPESIDE;
+        }
+        return ColPriv.PY_NZ_FACEPX_SLOPESIDE;
+    }
+    private static ColPriv RotateNY_PZ_FACEPX_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePX_PZ_FACEPY_SLOPESIDE(x, y, 0);
+            case 2: return RotatePY_PZ_FACENX_SLOPESIDE(x, y, 0);
+            case 3: return RotateNX_PZ_FACENY_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNY_NZ_FACEPX_SLOPESIDE(0, y, 0);
+            case 2: return RotatePY_NZ_FACEPX_SLOPESIDE(0, y, 0);
+            case 3: return RotatePY_PZ_FACEPX_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PX_NY_FACENZ_SLOPESIDE;
+            case 2: return ColPriv.NY_NZ_FACENX_SLOPESIDE;
+            case 3: return ColPriv.NX_NY_FACEPZ_SLOPESIDE;
+        }
+        return ColPriv.NY_PZ_FACEPX_SLOPESIDE;
+    }
+    private static ColPriv RotateNY_NZ_FACEPX_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePX_NZ_FACEPY_SLOPESIDE(x, y, 0);
+            case 2: return RotatePY_NZ_FACENX_SLOPESIDE(x, y, 0);
+            case 3: return RotateNX_NZ_FACENY_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePY_NZ_FACEPX_SLOPESIDE(0, y, 0);
+            case 2: return RotatePY_PZ_FACEPX_SLOPESIDE(0, y, 0);
+            case 3: return RotateNY_PZ_FACEPX_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NX_NY_FACENZ_SLOPESIDE;
+            case 2: return ColPriv.NY_PZ_FACENX_SLOPESIDE;
+            case 3: return ColPriv.PX_NY_FACEPZ_SLOPESIDE;
+        }
+        return ColPriv.NY_NZ_FACEPX_SLOPESIDE;
+    }
+    private static ColPriv RotateNY_NZ_FACENX_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePX_NZ_FACENY_SLOPESIDE(x, y, 0);
+            case 2: return RotatePY_NZ_FACEPX_SLOPESIDE(x, y, 0);
+            case 3: return RotateNX_NZ_FACEPY_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePY_NZ_FACENX_SLOPESIDE(0, y, 0);
+            case 2: return RotatePY_PZ_FACENX_SLOPESIDE(0, y, 0);
+            case 3: return RotateNY_PZ_FACENX_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NX_NY_FACEPZ_SLOPESIDE;
+            case 2: return ColPriv.NY_PZ_FACEPX_SLOPESIDE;
+            case 3: return ColPriv.PX_NY_FACENZ_SLOPESIDE;
+        }
+        return ColPriv.NY_NZ_FACENX_SLOPESIDE;
+    }
+    private static ColPriv RotateNY_PZ_FACENX_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePX_PZ_FACENY_SLOPESIDE(x, y, 0);
+            case 2: return RotatePY_PZ_FACEPX_SLOPESIDE(x, y, 0);
+            case 3: return RotateNX_PZ_FACEPY_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNY_NZ_FACENX_SLOPESIDE(0, y, 0);
+            case 2: return RotatePY_NZ_FACENX_SLOPESIDE(0, y, 0);
+            case 3: return RotatePY_PZ_FACENX_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PX_NY_FACEPZ_SLOPESIDE;
+            case 2: return ColPriv.NY_NZ_FACEPX_SLOPESIDE;
+            case 3: return ColPriv.NX_NY_FACENZ_SLOPESIDE;
+        }
+        return ColPriv.NY_PZ_FACENX_SLOPESIDE;
+    }
+    private static ColPriv RotatePY_NZ_FACENX_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNX_NZ_FACENY_SLOPESIDE(x, y, 0);
+            case 2: return RotateNY_NZ_FACEPX_SLOPESIDE(x, y, 0);
+            case 3: return RotatePX_NZ_FACEPY_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePY_PZ_FACENX_SLOPESIDE(0, y, 0);
+            case 2: return RotateNY_PZ_FACENX_SLOPESIDE(0, y, 0);
+            case 3: return RotateNY_NZ_FACENX_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NX_PY_FACEPZ_SLOPESIDE;
+            case 2: return ColPriv.PY_PZ_FACEPX_SLOPESIDE;
+            case 3: return ColPriv.PX_PY_FACENZ_SLOPESIDE;
+        }
+        return ColPriv.PY_NZ_FACENX_SLOPESIDE;
+    }
+    private static ColPriv RotatePY_PZ_FACENX_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNX_PZ_FACENY_SLOPESIDE(x, y, 0);
+            case 2: return RotateNY_PZ_FACEPX_SLOPESIDE(x, y, 0);
+            case 3: return RotatePX_PZ_FACEPY_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNY_PZ_FACENX_SLOPESIDE(0, y, 0);
+            case 2: return RotateNY_NZ_FACENX_SLOPESIDE(0, y, 0);
+            case 3: return RotatePY_NZ_FACENX_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PX_PY_FACEPZ_SLOPESIDE;
+            case 2: return ColPriv.PY_NZ_FACEPX_SLOPESIDE;
+            case 3: return ColPriv.NX_PY_FACENZ_SLOPESIDE;
+        }
+        return ColPriv.PY_PZ_FACENX_SLOPESIDE;
+    }
+    private static ColPriv RotateNX_PY_FACENZ_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNX_NY_FACENZ_SLOPESIDE(x, y, 0);
+            case 2: return RotatePX_NY_FACENZ_SLOPESIDE(x, y, 0);
+            case 3: return RotatePX_PY_FACENZ_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNX_PZ_FACEPY_SLOPESIDE(0, y, 0);
+            case 2: return RotateNX_NY_FACEPZ_SLOPESIDE(0, y, 0);
+            case 3: return RotateNX_NZ_FACENY_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PY_PZ_FACENX_SLOPESIDE;
+            case 2: return ColPriv.PX_PY_FACEPZ_SLOPESIDE;
+            case 3: return ColPriv.PY_NZ_FACEPX_SLOPESIDE;
+        }
+        return ColPriv.NX_PY_FACENZ_SLOPESIDE;
+    }
+    private static ColPriv RotatePX_PY_FACENZ_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNX_PY_FACENZ_SLOPESIDE(x, y, 0);
+            case 2: return RotateNX_NY_FACENZ_SLOPESIDE(x, y, 0);
+            case 3: return RotatePX_NY_FACENZ_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePX_PZ_FACEPY_SLOPESIDE(0, y, 0);
+            case 2: return RotatePX_NY_FACEPZ_SLOPESIDE(0, y, 0);
+            case 3: return RotatePX_NZ_FACENY_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PY_NZ_FACENX_SLOPESIDE;
+            case 2: return ColPriv.NX_PY_FACEPZ_SLOPESIDE;
+            case 3: return ColPriv.PY_PZ_FACEPX_SLOPESIDE;
+        }
+        return ColPriv.PX_PY_FACENZ_SLOPESIDE;
+    }
+    private static ColPriv RotateNX_NY_FACENZ_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePX_NY_FACENZ_SLOPESIDE(x, y, 0);
+            case 2: return RotatePX_PY_FACENZ_SLOPESIDE(x, y, 0);
+            case 3: return RotateNX_PY_FACENZ_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNX_NZ_FACEPY_SLOPESIDE(0, y, 0);
+            case 2: return RotateNX_PY_FACEPZ_SLOPESIDE(0, y, 0);
+            case 3: return RotateNX_PZ_FACENY_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NY_PZ_FACENX_SLOPESIDE;
+            case 2: return ColPriv.PX_NY_FACEPZ_SLOPESIDE;
+            case 3: return ColPriv.NY_NZ_FACEPX_SLOPESIDE;
+        }
+        return ColPriv.NX_NY_FACENZ_SLOPESIDE;
+    }
+    private static ColPriv RotateNX_NY_FACEPZ_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePX_NY_FACEPZ_SLOPESIDE(x, y, 0);
+            case 2: return RotatePX_PY_FACEPZ_SLOPESIDE(x, y, 0);
+            case 3: return RotateNX_PY_FACEPZ_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNX_NZ_FACENY_SLOPESIDE(0, y, 0);
+            case 2: return RotateNX_PY_FACENZ_SLOPESIDE(0, y, 0);
+            case 3: return RotateNX_PZ_FACEPY_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NY_PZ_FACEPX_SLOPESIDE;
+            case 2: return ColPriv.PX_NY_FACENZ_SLOPESIDE;
+            case 3: return ColPriv.NY_NZ_FACENX_SLOPESIDE;
+        }
+        return ColPriv.NX_NY_FACEPZ_SLOPESIDE;
+    }
+    private static ColPriv RotatePX_PY_FACEPZ_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNX_PY_FACEPZ_SLOPESIDE(x, y, 0);
+            case 2: return RotateNX_NY_FACEPZ_SLOPESIDE(x, y, 0);
+            case 3: return RotatePX_NY_FACEPZ_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePX_PZ_FACENY_SLOPESIDE(0, y, 0);
+            case 2: return RotatePX_NY_FACENZ_SLOPESIDE(0, y, 0);
+            case 3: return RotatePX_NZ_FACEPY_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PY_NZ_FACEPX_SLOPESIDE;
+            case 2: return ColPriv.NX_PY_FACENZ_SLOPESIDE;
+            case 3: return ColPriv.PY_PZ_FACENX_SLOPESIDE;
+        }
+        return ColPriv.PX_PY_FACEPZ_SLOPESIDE;
+    }
+    private static ColPriv RotateNX_PY_FACEPZ_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotateNX_NY_FACEPZ_SLOPESIDE(x, y, 0);
+            case 2: return RotatePX_NY_FACEPZ_SLOPESIDE(x, y, 0);
+            case 3: return RotatePX_PY_FACEPZ_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotateNX_PZ_FACENY_SLOPESIDE(0, y, 0);
+            case 2: return RotateNX_NY_FACENZ_SLOPESIDE(0, y, 0);
+            case 3: return RotateNX_NZ_FACEPY_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.PY_PZ_FACEPX_SLOPESIDE;
+            case 2: return ColPriv.PX_PY_FACENZ_SLOPESIDE;
+            case 3: return ColPriv.PY_NZ_FACENX_SLOPESIDE;
+        }
+        return ColPriv.NX_PY_FACEPZ_SLOPESIDE;
+    }
+    private static ColPriv RotatePX_NY_FACENZ_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePX_PY_FACENZ_SLOPESIDE(x, y, 0);
+            case 2: return RotateNX_PY_FACENZ_SLOPESIDE(x, y, 0);
+            case 3: return RotateNX_NY_FACENZ_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePX_NZ_FACEPY_SLOPESIDE(0, y, 0);
+            case 2: return RotatePX_PY_FACEPZ_SLOPESIDE(0, y, 0);
+            case 3: return RotatePX_PZ_FACENY_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NY_NZ_FACENX_SLOPESIDE;
+            case 2: return ColPriv.NX_NY_FACEPZ_SLOPESIDE;
+            case 3: return ColPriv.NY_PZ_FACEPX_SLOPESIDE;
+        }
+        return ColPriv.PX_NY_FACENZ_SLOPESIDE;
+    }
+    private static ColPriv RotatePX_NY_FACEPZ_SLOPESIDE(int x, int y, int z)
+    {
+        switch (z)
+        {
+            case 1: return RotatePX_PY_FACEPZ_SLOPESIDE(x, y, 0);
+            case 2: return RotateNX_PY_FACEPZ_SLOPESIDE(x, y, 0);
+            case 3: return RotateNX_NY_FACEPZ_SLOPESIDE(x, y, 0);
+        }
+        switch (x)
+        {
+            case 1: return RotatePX_NZ_FACENY_SLOPESIDE(0, y, 0);
+            case 2: return RotatePX_PY_FACENZ_SLOPESIDE(0, y, 0);
+            case 3: return RotatePX_PZ_FACEPY_SLOPESIDE(0, y, 0);
+        }
+        switch (y)
+        {
+            case 1: return ColPriv.NY_NZ_FACEPX_SLOPESIDE;
+            case 2: return ColPriv.NX_NY_FACENZ_SLOPESIDE;
+            case 3: return ColPriv.NY_PZ_FACENX_SLOPESIDE;
+        }
+        return ColPriv.PX_NY_FACEPZ_SLOPESIDE;
+    }
 }
